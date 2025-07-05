@@ -19,7 +19,7 @@ const FlashCard = ({ question, answer, isMuted }: FlashCardProps) => {
 
     return (
         <li
-            className={`flashcard mb-6  text-lg text-gray-900 p-4 rounded-lg hover:shadow-xl ${
+            className={`flashcard mb-6 text-lg text-gray-900 p-4 rounded-lg hover:shadow-xl ${
                 isFlipped ? 'flipped' : ''
             }`}
             onClick={toggleFlip}
