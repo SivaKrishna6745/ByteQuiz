@@ -11,10 +11,39 @@
     }
 }
 
-.card {
-    padding: 2em;
+.flashcard {
+    position: relative;
+    background-color: hsl(0, 0%, 100%, 0.5);
+    cursor: pointer;
+    height: 10rem;
+    aspect-ratio: 3 / 2;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 250ms ease-in-out;
 }
 
-.read-the-docs {
-    color: #888;
+.flashcard:hover {
+    background-color: hsl(0, 0%, 100%, 0.8);
+    scale: 1.1;
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.025rem;
+    padding: 1rem;
+    backface-visibility: hidden;
+}
+
+.flashcard-back {
+    transform: rotateY(180deg);
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
 }
