@@ -1,10 +1,10 @@
 import './App.css';
-import QuizBoard from './components/QuizBoard';
+import BytesBoard from './components/BytesBoard';
 
 function App() {
     return (
         <>
-            <QuizBoard />
+            <BytesBoard />
         </>
     );
 }

@@ -3,7 +3,7 @@ import { quizData } from '../data/quiz';
 import FlashCard from './FlashCard';
 import { GoMute, GoUnmute } from 'react-icons/go';
 
-const QuizBoard = () => {
+const BytesBoard = () => {
     const [isMuted, setIsMuted] = useState<boolean>(false);
 
     return (
@@ -32,4 +32,4 @@ const QuizBoard = () => {
     );
 };
 
-export default QuizBoard;
+export default BytesBoard;
