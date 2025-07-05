@@ -5,11 +5,12 @@ type FlashCardProps = {
     question: string;
     answer?: string;
     category?: string;
+    isMuted?: boolean;
 };
 
-const FlashCard = ({ question, answer }: FlashCardProps) => {
+const FlashCard = ({ question, answer, isMuted }: FlashCardProps) => {
     const [isFlipped, setIsFlipped] = useState<boolean>(false);
-    const playFlip = useFlipSound();
+    const playFlip = useFlipSound(isMuted ?? false);
 
     const toggleFlip = () => {
         setIsFlipped(!isFlipped);

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const useFlipSound = () => {
+const useFlipSound = (isMuted: boolean) => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     useEffect(() => {
         audioRef.current = new Audio('/sounds/flipsound.mp3');
@@ -8,7 +8,7 @@ const useFlipSound = () => {
     }, []);
 
     const playFlipSound = () => {
-        if (audioRef.current) {
+        if (!isMuted && audioRef.current) {
             audioRef.current.currentTime = 0;
             audioRef.current.play();
         }
