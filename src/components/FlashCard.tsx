@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useFlipSound from '../hooks/useFlipSound';
 
 type FlashCardProps = {
     question: string;
@@ -8,9 +9,13 @@ type FlashCardProps = {
 
 const FlashCard = ({ question, answer }: FlashCardProps) => {
     const [isFlipped, setIsFlipped] = useState<boolean>(false);
+    const playFlip = useFlipSound();
+
     const toggleFlip = () => {
         setIsFlipped(!isFlipped);
+        playFlip();
     };
+
     return (
         <li
             className={`flashcard mb-6  text-lg text-gray-900 p-4 rounded-lg hover:shadow-xl ${
